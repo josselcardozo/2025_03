@@ -1,0 +1,45 @@
+// Clase Circulo: representa un círculo geométrico
+public class Circulo
+{
+ // radio es una variable privada de tipo double que almacena el radio del círculo
+ private double radio;
+ // Constructor para inicializar el radio
+ public Circulo(double radio)
+ {
+ this.radio = radio;
+ }
+ // CalcularArea es una función que devuelve un valor double
+ // Se utiliza para calcular el área de un círculo
+ public double CalcularArea()
+ {
+ return Math.PI * radio * radio;
+ }
+ // CalcularPerimetro devuelve el perímetro del círculo (la circunferencia)
+ public double CalcularPerimetro()
+ {
+ return 2 * Math.PI * radio;
+ }
+}
+// Clase Rectangulo: representa un rectángulo geométrico
+public class Rectangulo
+{
+ // largo y ancho son variables privadas que definen el tamaño del rectángulo
+ private double largo;
+ private double ancho;
+ // Constructor para inicializar el largo y el ancho
+ public Rectangulo(double largo, double ancho)
+ {
+ this.largo = largo;
+ this.ancho = ancho;
+ }
+ // CalcularArea devuelve el área del rectángulo
+ public double CalcularArea()
+ {
+ return largo * ancho;
+ }
+ // CalcularPerimetro devuelve el perímetro del rectángulo
+Clases en C# para Figuras Geométricas
+ public double CalcularPerimetro()
+ {
+ return 2 * (largo + ancho);
+ 
