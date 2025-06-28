@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Ejercicios
+{
+    public class ListaNumeros
+    {
+        public List<int> Numeros { get; set; }
+
+        public ListaNumeros()
+        {
+            Numeros = new List<int>();
+        }
+
+        public void AgregarNumero(int numero)
+        {
+            Numeros.Add(numero);
+        }
+
+        public int CalcularSuma()
+        {
+            return Numeros.Sum();
+        }
+
+        public void MostrarLista()
+        {
+            Console.WriteLine("Números en la lista:");
+            foreach (var num in Numeros)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
