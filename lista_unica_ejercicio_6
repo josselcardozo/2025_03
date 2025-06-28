@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Ejercicios
+{
+    public class ListaUnica
+    {
+        public List<int> EliminarDuplicados(List<int> lista)
+        {
+            return lista.Distinct().ToList();
+        }
+    }
+}
