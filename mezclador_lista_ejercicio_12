@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+namespace Ejercicios
+{
+    public class MezcladorListas
+    {
+        public List<string> Mezclar(List<string> lista1, List<string> lista2)
+        {
+            var resultado = new List<string>();
+            int max = Math.Max(lista1.Count, lista2.Count);
+
+            for (int i = 0; i < max; i++)
+            {
+                if (i < lista1.Count)
+                    resultado.Add(lista1[i]);
+
+                if (i < lista2.Count)
+                    resultado.Add(lista2[i]);
+            }
+
+            return resultado;
+        }
+    }
+}
