@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Ejercicios
+{
+    public class ListaContadora
+    {
+        public int ContarMayores(List<int> lista, int valor)
+        {
+            return lista.Count(n => n > valor);
+        }
+    }
+}
