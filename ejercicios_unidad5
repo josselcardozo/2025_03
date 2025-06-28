@@ -1,0 +1,21 @@
+public class ListaPalabras
+{
+    public List<string> Palabras { get; set; }
+
+    public ListaPalabras(List<string> palabras)
+    {
+        Palabras = palabras;
+    }
+
+    public void AgregarPalabra(string nuevaPalabra)
+    {
+        Palabras.Add(nuevaPalabra);
+    }
+
+    public void Mostrar()
+    {
+        Console.WriteLine("Lista actual:");
+        foreach (var palabra in Palabras)
+            Console.WriteLine($"- {palabra}");
+    }
+}
