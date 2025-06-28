@@ -19,3 +19,22 @@ public class ListaPalabras
             Console.WriteLine($"- {palabra}");
     }
 }
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var lista1 = new List<string> { "a", "b", "c" };
+        var lista2 = new List<string> { "1", "2", "3", "4" };
+
+        var mezclador = new MezcladorListas();
+        var resultado = mezclador.Mezclar(lista1, lista2);
+
+        Console.WriteLine("Lista combinada:");
+        foreach (string elemento in resultado)
+        {
+            Console.WriteLine(elemento);
+        }
+    }
+}
