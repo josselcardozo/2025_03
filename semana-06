@@ -1,0 +1,53 @@
+public class ListaEnlazada
+{
+    private Nodo cabeza;
+
+    // Insertar al final
+    public void InsertarAlFinal(int dato)
+    {
+        Nodo nuevo = new Nodo(dato);
+        if (cabeza == null)
+        {
+            cabeza = nuevo;
+        }
+        else
+        {
+            Nodo actual = cabeza;
+            while (actual.Siguiente != null)
+            {
+                actual = actual.Siguiente;
+            }
+            actual.Siguiente = nuevo;
+        }
+    }
+
+    // Mostrar lista
+    public void Mostrar()
+    {
+        Nodo actual = cabeza;
+        while (actual != null)
+        {
+            Console.Write(actual.Dato + " -> ");
+            actual = actual.Siguiente;
+        }
+        Console.WriteLine("null");
+    }
+
+    // Invertir lista
+    public void Invertir()
+    {
+        Nodo anterior = null;
+        Nodo actual = cabeza;
+        Nodo siguiente = null;
+
+        while (actual != null)
+        {
+            siguiente = actual.Siguiente;   // Guardamos siguiente
+            actual.Siguiente = anterior;    // Revertimos el enlace
+            anterior = actual;              // Avanzamos anterior
+            actual = siguiente;             // Avanzamos actual
+        }
+
+        cabeza = anterior; // Nueva cabeza es el último nodo original
+    }
+}
