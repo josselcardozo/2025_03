@@ -1,0 +1,87 @@
+public class ListaEnlazada
+{
+    private Nodo cabeza;
+
+    // Insertar al final
+    public void InsertarAlFinal(int dato)
+    {
+        Nodo nuevo = new Nodo(dato);
+        if (cabeza == null)
+        {
+            cabeza = nuevo;
+        }
+        else
+        {
+            Nodo actual = cabeza;
+            while (actual.Siguiente != null)
+            {
+                actual = actual.Siguiente;
+            }
+            actual.Siguiente = nuevo;
+        }
+    }
+
+    // Mostrar lista
+    public void Mostrar()
+    {
+        Nodo actual = cabeza;
+        while (actual != null)
+        {
+            Console.Write(actual.Dato + " -> ");
+            actual = actual.Siguiente;
+        }
+        Console.WriteLine("null");
+    }
+
+    // Buscar ocurrencias de un valor
+    public void Buscar(int valor)
+    {
+        Nodo actual = cabeza;
+        int contador = 0;
+
+        while (actual != null)
+        {
+            if (actual.Dato == valor)
+            {
+                contador++;
+            }
+            actual = actual.Siguiente;
+        }
+
+        if (contador > 0)
+        {
+            Console.WriteLine($"El valor {valor} se encontró {contador} vez/veces en la lista.");
+        }
+        else
+        {
+            Console.WriteLine($"El valor {valor} NO fue encontrado en la lista.");
+        }
+    }
+}
+
+
+
+using System;
+
+class Programa
+{
+    static void Main(string[] args)
+    {
+        ListaEnlazada lista = new ListaEnlazada();
+
+        // Insertamos algunos valores (algunos repetidos)
+        lista.InsertarAlFinal(3);
+        lista.InsertarAlFinal(7);
+        lista.InsertarAlFinal(3);
+        lista.InsertarAlFinal(9);
+        lista.InsertarAlFinal(3);
+
+        Console.WriteLine("Lista actual:");
+        lista.Mostrar();
+
+        // Buscar valores
+        lista.Buscar(3);  // Existe varias veces
+        lista.Buscar(9);  // Existe una vez
+        lista.Buscar(5);  // No existe
+    }
+}
