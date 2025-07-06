@@ -51,3 +51,30 @@ public class ListaEnlazada
         cabeza = anterior; // Nueva cabeza es el último nodo original
     }
 }
+
+
+using System;
+
+class Programa
+{
+    static void Main(string[] args)
+    {
+        ListaEnlazada lista = new ListaEnlazada();
+
+        // Insertamos elementos
+        lista.InsertarAlFinal(1);
+        lista.InsertarAlFinal(2);
+        lista.InsertarAlFinal(3);
+        lista.InsertarAlFinal(4);
+        lista.InsertarAlFinal(5);
+
+        Console.WriteLine("Lista original:");
+        lista.Mostrar();
+
+        // Invertimos la lista
+        lista.Invertir();
+
+        Console.WriteLine("Lista invertida:");
+        lista.Mostrar();
+    }
+}
